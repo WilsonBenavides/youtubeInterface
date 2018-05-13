@@ -48,6 +48,7 @@ class VideoCell: UICollectionViewCell {
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .blue
+        imageView.image = UIImage(named: "taylor_swift_blank_space")
         return imageView
     }()
     
