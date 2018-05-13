@@ -75,9 +75,11 @@ class VideoCell: UICollectionViewCell {
     }()
     
     let subtitleTextView: UITextView = {
-        let textView = UITextView()        
+        let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = "TaylorSwiftVEVO - 1,604,684,607 views - 2 years"
+        textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
+        textView.textColor = .lightGray
         return textView
     }()
     
