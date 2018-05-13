@@ -58,6 +58,8 @@ class VideoCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.backgroundColor = .green
         imageView.image = UIImage(named: "taylor_swift_profile")
+        imageView.layer.cornerRadius = 22
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
