@@ -63,10 +63,18 @@ class VideoCell: UICollectionViewCell {
         return view
     }()
     
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .purple
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     func setupViews() {
         addSubview(thumbnailImageView)
         addSubview(separatorView)
         addSubview(userProfileImageView)
+        addSubview(titleLabel)
         
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: thumbnailImageView)
         
@@ -74,6 +82,16 @@ class VideoCell: UICollectionViewCell {
         //vertical constraints
         addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: thumbnailImageView, userProfileImageView, separatorView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: separatorView)
+        
+        //top constraint
+        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: thumbnailImageView, attribute: .bottom, multiplier: 1, constant: 8))
+        //left constraint
+        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .left, relatedBy: .equal, toItem: userProfileImageView, attribute: .right, multiplier: 1, constant: 8))
+        //right constraint
+        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .right, relatedBy: .equal, toItem: thumbnailImageView, attribute: .right, multiplier: 1, constant: 0))
+        
+        addConstraintsWithFormat(format: "V:[v0(20)]", views: titleLabel)
+        //addConstraintsWithFormat(format: "H:|[v0]|", views: titleLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
