@@ -13,7 +13,11 @@ class HomeController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
+        navigationItem.title = "Home"
+        
+        collectionView?.backgroundColor = .white
     }
+    
+    
 }
 
