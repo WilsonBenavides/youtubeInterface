@@ -41,8 +41,15 @@ class VideoCell: UICollectionViewCell {
         setupViews()
     }
     
+    let thumbnailImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .blue
+        return imageView
+    }()
+    
     func setupViews() {
-        backgroundColor = .blue
+        addSubview(thumbnailImageView)
+        thumbnailImageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
     }
     
     required init?(coder aDecoder: NSCoder) {
