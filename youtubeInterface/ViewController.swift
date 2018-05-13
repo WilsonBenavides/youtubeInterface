@@ -68,16 +68,16 @@ class VideoCell: UICollectionViewCell {
     }()
     
     let titleLabel: UILabel = {
-        let label = UILabel()        
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Taylor Swift - Blank Space"
         return label
     }()
     
     let subtitleTextView: UITextView = {
-        let textView = UITextView()
-        textView.backgroundColor = .red
+        let textView = UITextView()        
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.text = "TaylorSwiftVEVO - 1,604,684,607 views - 2 years"
         return textView
     }()
     
