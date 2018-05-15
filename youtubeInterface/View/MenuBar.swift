@@ -56,10 +56,18 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
 
 class MenuCell: BaseCell {
     
+    let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(named: "home")
+        return iv
+    }()
+    
     override func setupViews() {
         super.setupViews()
         
-        backgroundColor = .yellow
+        addSubview(imageView)
+        addConstraintsWithFormat(format: "H:[v0(28)]", views: imageView)
+        addConstraintsWithFormat(format: "V:[v0(28)]", views: imageView)
     }
 }
 
