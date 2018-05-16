@@ -41,6 +41,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1061077420ACA98D008ED9BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1063135320A81A79005E40B4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +67,7 @@
 		1063135E20A81A79005E40B4 /* youtubeInterface */ = {
 			isa = PBXGroup;
 			children = (
+				1061077420ACA98D008ED9BB /* Model */,
 				10F2B95520A912200041D0D0 /* View */,
 				10F2B95820A912AF0041D0D0 /* Controller */,
 				10F2B95220A911950041D0D0 /* Helpers */,
