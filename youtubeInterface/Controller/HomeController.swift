@@ -14,7 +14,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         var blankSpaceVideo = Video()
         blankSpaceVideo.title = "Taylor Swift - Blank Space"
         blankSpaceVideo.thumbnailImageName = "taylor_swift_blank_space"
-        return [blankSpaceVideo]
+        
+        var badBloodVideo = Video()
+        badBloodVideo.title = "Taylor Swift - Bad Blood featuring Kendrick Lamar"
+        badBloodVideo.thumbnailImageName = "taylor_swift_bad_blood"
+        
+        return [blankSpaceVideo, badBloodVideo]
     }()
 
     override func viewDidLoad() {
