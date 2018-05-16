@@ -30,4 +30,6 @@ extension UIView {
 extension UIColor {
     static var statusBarColor = UIColor.rgb(red: 43, green: 113, blue: 143)
     static var navigationBarColor = UIColor.rgb(red: 50, green: 129, blue: 162)
+    static var iconBarColor = UIColor.rgb(red: 191, green: 230, blue: 247)
+    static var iconDarkBarColor = UIColor.rgb(red: 32, green: 53, blue: 62)
 }
