@@ -34,3 +34,22 @@ extension UIColor {
     static var iconDarkBarColor = UIColor.rgb(red: 32, green: 53, blue: 62)
     static var separatorColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
 }
+
+extension UIImageView {
+    
+    func loadImageUsingUrlString(urlString: String) {
+        let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: url!, completionHandler:  { (data, responses, error) in
+            
+            if error != nil {
+                print(error ?? "error handling")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.image = UIImage(data: data!)
+            }
+            
+        }).resume()
+    }
+}
