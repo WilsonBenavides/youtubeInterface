@@ -32,4 +32,5 @@ extension UIColor {
     static var navigationBarColor = UIColor.rgb(red: 50, green: 129, blue: 162)
     static var iconBarColor = UIColor.rgb(red: 191, green: 230, blue: 247)
     static var iconDarkBarColor = UIColor.rgb(red: 32, green: 53, blue: 62)
+    static var separatorColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
 }
