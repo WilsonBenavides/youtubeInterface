@@ -10,26 +10,6 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    //    var videos: [Video] = {
-    //        var kanyeChannel = Channel()
-    //        kanyeChannel.name = "KanyeIsTheBestChannel"
-    //        kanyeChannel.profileImageName = "kanye_profile"
-    //
-    //        var blankSpaceVideo = Video()
-    //        blankSpaceVideo.title = "Taylor Swift - Blank Space"
-    //        blankSpaceVideo.thumbnailImageName = "taylor_swift_blank_space"
-    //        blankSpaceVideo.channel = kanyeChannel
-    //        blankSpaceVideo.numberOfViews = 239843093
-    //
-    //        var badBloodView = Video()
-    //        badBloodView.title = "Taylor Swift - Bad Blood featuring Kendrick Lamar"
-    //        badBloodView.thumbnailImageName = "taylor_swift_bad_blood"
-    //        badBloodView.channel = kanyeChannel
-    //        badBloodView.numberOfViews = 1234567890
-    //
-    //        return [blankSpaceVideo, badBloodView]
-    //    }()
-    
     var videos : [Video]?
     
     func fetchVideos() {
@@ -60,16 +40,14 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                     
                     self.videos?.append(video)
                 }
+                
                 DispatchQueue.main.async {
                     self.collectionView?.reloadData()
                 }
-                //print(json)
+                
             } catch let jsonError {
                 print(jsonError)
             }
-            
-            //let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            //print(str)
             
             }.resume()
     }
@@ -86,7 +64,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         titleLabel.text = "Home"
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 30)
-        //titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
         navigationItem.titleView = titleLabel
         
         collectionView?.backgroundColor = UIColor.white
@@ -108,10 +85,24 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         navigationItem.rightBarButtonItems = [moreButton, searchBarButtonItem]
     }
     
-    let settingsLauncher = SettingsLauncher()
+    lazy var settingsLauncher : SettingsLauncher = {
+        let launcher = SettingsLauncher()
+        launcher.homeController = self
+        return launcher
+    }()
     
     @objc func handleMore() {
         settingsLauncher.showSettings()
+        //showControllerForSettings()
+    }
+    
+    func showControllerForSetting(setting: Setting) {
+        let dummySettingsViewContoller = UIViewController()
+        dummySettingsViewContoller.view.backgroundColor = .white
+        dummySettingsViewContoller.navigationItem.title = setting.name
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController?.pushViewController(dummySettingsViewContoller, animated: true)
     }
     
     @objc func handleSearch() {
@@ -149,14 +140,3 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         return 0
     }
 }
-
-
-
-
-
-
-
-
-
-
-
