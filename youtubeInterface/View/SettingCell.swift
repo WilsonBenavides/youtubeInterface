@@ -15,13 +15,13 @@ class SettingCell: BaseCell {
             backgroundColor = isHighlighted ? .darkGray : .white
             nameLabel.textColor = isHighlighted ? .white : .black
             iconImageView.tintColor = isHighlighted ? .white : .darkGray
-            print(isHighlighted)
+            //print(isHighlighted)
         }
     }
     
     var setting : Setting? {
         didSet {
-            nameLabel.text = setting?.name
+            nameLabel.text = setting?.name.rawValue
             
             if let imageName = setting?.imageName {
                 iconImageView.image = UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate)
@@ -32,8 +32,9 @@ class SettingCell: BaseCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Setting"                                                              
+        label.text = "Setting"
         label.font = UIFont.systemFont(ofSize: 13)
+        //label.textAlignment = .left
         return label
     }()
     
@@ -57,4 +58,3 @@ class SettingCell: BaseCell {
         addConstraint(NSLayoutConstraint(item: iconImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     }
 }
-
