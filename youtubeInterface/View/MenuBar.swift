@@ -59,9 +59,9 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         let x = CGFloat(indexPath.item) * frame.width / 4
         horizontalBarleftAnchorConstraint?.constant = x
         
-        UIView.animate(withDuration: 0.75) {
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.layoutIfNeeded()
-        }
+        }, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
