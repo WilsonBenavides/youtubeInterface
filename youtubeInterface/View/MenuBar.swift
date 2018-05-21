@@ -37,13 +37,17 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         setupHorizontalBar()
     }
     
+    var horizontalBarleftAnchorConstraint: NSLayoutConstraint?
+    
     func setupHorizontalBar() {
         let horizontalBarView = UIView()
         horizontalBarView.backgroundColor = UIColor(white: 0.9, alpha: 1)
         horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(horizontalBarView)
         
-        horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        horizontalBarleftAnchorConstraint = horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor)
+        horizontalBarleftAnchorConstraint?.isActive = true
+        
         horizontalBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         horizontalBarView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
@@ -52,7 +56,12 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
+        let x = CGFloat(indexPath.item) * frame.width / 4
+        horizontalBarleftAnchorConstraint?.constant = x
         
+        UIView.animate(withDuration: 0.75) {
+            self.layoutIfNeeded()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
