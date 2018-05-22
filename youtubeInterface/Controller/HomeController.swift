@@ -86,11 +86,17 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     @objc func handleSearch() {
-        
+        scrollToMenuIndex(menuIndex: 2)
     }
     
-    let menuBar: MenuBar = {
+    func scrollToMenuIndex(menuIndex: Int) {
+        let indexPath = IndexPath(item: menuIndex, section: 0)
+        collectionView?.scrollToItem(at: indexPath, at: [], animated: true)
+    }
+    
+    lazy var menuBar: MenuBar = {
         let mb = MenuBar()
+        mb.homeController = self
         return mb
     }()
     
@@ -108,6 +114,20 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         view.addConstraintsWithFormat(format: "V:[v0(50)]", views: menuBar)
         
         menuBar.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        menuBar.horizontalBarleftAnchorConstraint?.constant = scrollView.contentOffset.x / 4
+    }
+    
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let index = targetContentOffset.pointee.x / view.frame.width
+        
+        let indexPath = IndexPath(item: Int(index), section: 0)
+        
+        menuBar.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
