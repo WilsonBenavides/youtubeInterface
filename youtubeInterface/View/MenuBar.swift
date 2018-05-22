@@ -39,7 +39,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         setupHorizontalBar()
     }
     
-    var horizontalBarleftAnchorConstraint: NSLayoutConstraint?
+    var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
     
     func setupHorizontalBar() {
         let horizontalBarView = UIView()
@@ -47,8 +47,8 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(horizontalBarView)
         
-        horizontalBarleftAnchorConstraint = horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor)
-        horizontalBarleftAnchorConstraint?.isActive = true
+        horizontalBarLeftAnchorConstraint = horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor)
+        horizontalBarLeftAnchorConstraint?.isActive = true
         
         horizontalBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         

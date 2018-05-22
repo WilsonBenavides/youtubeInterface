@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1010AD4F20AB33FA00B2CBEF /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010AD4E20AB33F900B2CBEF /* MenuBar.swift */; };
+		102EF7D220B3EDC3007F3029 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102EF7D120B3EDC3007F3029 /* FeedCell.swift */; };
 		1061077620ACA9CB008ED9BB /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061077520ACA9CB008ED9BB /* Video.swift */; };
 		1061077820AD9541008ED9BB /* SettingLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1061077720AD9541008ED9BB /* SettingLauncher.swift */; };
 		1063136020A81A79005E40B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063135F20A81A79005E40B4 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		1010AD4E20AB33F900B2CBEF /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		102EF7D120B3EDC3007F3029 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		1061077520ACA9CB008ED9BB /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		1061077720AD9541008ED9BB /* SettingLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLauncher.swift; sourceTree = "<group>"; };
 		1063135C20A81A79005E40B4 /* youtubeInterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = youtubeInterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				10F2B95620A912420041D0D0 /* VideoCell.swift */,
 				1010AD4E20AB33F900B2CBEF /* MenuBar.swift */,
 				10E037A620AEA1250040FDB1 /* SettingCell.swift */,
+				102EF7D120B3EDC3007F3029 /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1061077820AD9541008ED9BB /* SettingLauncher.swift in Sources */,
+				102EF7D220B3EDC3007F3029 /* FeedCell.swift in Sources */,
 				1063136220A81A79005E40B4 /* HomeController.swift in Sources */,
 				10E037A720AEA1250040FDB1 /* SettingCell.swift in Sources */,
 				1061077620ACA9CB008ED9BB /* Video.swift in Sources */,
